@@ -1,0 +1,19 @@
+<!-- pulls the base file here so we can make changes on one page that will reflect on many -->
+{% extends 'base.html' %}
+{% block content %}
+
+<h2> Manage Portfolio </h2>
+<h6> To remove stock tickers and all financial data, pless the delete item button below.</h6>
+
+{% if ticker %}
+
+	{% for item in ticker %}
+		{{ item }} - <a href="{% url 'delete' item.id %}">Delete Item</a><br/>
+	{% endfor %}
+
+{% else %}
+	Your portfolio appears to be empty.
+{% endif %}
+
+
+{% endblock %}
