@@ -12,7 +12,7 @@ def home(request):
 	if request.method == 'POST':
 		ticker = request.POST['ticker']
 		#pk_3db3e8dc01114322981f587a93f67cb7
-		api_request = requests.get("https://sandbox.iexapis.com/stable/stock/" + ticker + "/quote?token=Tpk_c46f4087296c43358402984f3b26ed2f")
+		api_request = requests.get("")
 
 		# for error handling
 		try:
@@ -48,7 +48,7 @@ def add_stock(request):
 		ticker = Stock.objects.all()
 		output = []
 		for ticker_item in ticker:
-			api_request = requests.get("https://sandbox.iexapis.com/stable/stock/" + str(ticker_item) + "/quote?token=Tpk_c46f4087296c43358402984f3b26ed2f")
+			api_request = requests.get("")
 
 			# for error handling
 			try:
